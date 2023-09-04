@@ -8,8 +8,8 @@
             <form>
 
                 <div class="form-group ">
-                    <label for="inputText">Commodity</label>
-                    <input type="text" class="form-control" id="inputText">
+                    <label for="inputText" >Commodity</label>
+                    <input type="text" class="form-control" id="inputText" (keypress)="getCommodityValue($event)">
                 </div>
                 <div class="form-group">
                     <label class="form-check-label" for="">Date</label>
