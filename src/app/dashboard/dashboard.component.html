@@ -7,16 +7,23 @@
         <div class="card p-5" style="width: 30%;">
             <form>
 
-                <div class="form-group ">
+                <div class="form-group"  [formGroup]="predictionForm" >
                     <label for="inputText" >Commodity</label>
-                    <input type="text" class="form-control" id="inputText" (keypress)="getCommodityValue($event)">
+                    <input type="text" class="form-control" id="inputText" formControlName="commodity">
+
+                    <span class="help-block description"
+                    *ngIf="!predictionForm.get('commodity')?.valid && predictionForm.get('commodity')?.touched">
+                      <small>Please enter valid commodity.</small>
+                </span>
+                <span class="help-block description" 
+                *ngIf="predictionForm.get('commodity')?.hasError('whitespace')">
+                <small>Commodity cannot contain whitespace!</small>
+                </span>
+        
                 </div>
-                <div class="form-group">
-                    <label class="form-check-label" for="">Date</label>
-                    <input type="date"  class="form-control" id="">
-                    <span class="text-muted">The Product forcasting date.</span>
-                </div>
-                <button class="btn btn-success" routerLink="../prediction">Submit</button>
+
+                
+                <button [disabled]="!predictionForm.valid" class="btn btn-success" (click)="submitPredictionMessage()" type="button">Submit</button>
             </form>
 
         </div>

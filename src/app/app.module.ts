@@ -10,7 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PredictionpartComponent } from './predictionpart/predictionpart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PredictionModalComponent } from './modal/prediction-modal/prediction-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -18,12 +20,13 @@ import { PredictionModalComponent } from './modal/prediction-modal/prediction-mo
     HeaderComponent,
     FooterComponent,
     DashboardComponent, 
-    PredictionpartComponent, PredictionModalComponent
+    PredictionpartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [],

@@ -1,10 +1,10 @@
 export class PredictionModalRequest {
 
-    private Comodity?: string
+    Comodity: string = '';
 }
 
 
 export class PredictionModalResponce {
 
-    private decision : string
+    private decision? : string
 }

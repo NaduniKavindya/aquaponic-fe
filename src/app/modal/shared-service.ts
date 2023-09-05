@@ -1,19 +1,19 @@
 import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
   })
 export class SharedService {
 
-    public messageSubject = new Subject();
+    public messageSubject = new BehaviorSubject<string>("");
 
 
     constructor() {
     }
 
     public setPredictionMessage(value :any){
-        this.messageSubject = value;
+        this.messageSubject.next(value);
     }
     /**
      * getPredictionMessage
